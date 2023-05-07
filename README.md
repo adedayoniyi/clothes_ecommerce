@@ -1,1 +1,3 @@
-# clothes_ecommerce app UI that perfectly implements light mode and dark mode
+# Ecommerce Shopping App
+#### This is an ecommerce app that perfectly imlements ```light mode``` and ```dark mode ``` and it manages its state using <a href="https://pub.dev/packages/provider"> Provider</a> so that when the user enters the app again their previous mode preferences are loaded using <a href="https://pub.dev/packages/shared_preferences">Shared preferences</a>
+<img src="assets/ecommerce.png" alt="app image"/>
