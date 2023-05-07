@@ -1,7 +1,6 @@
 import 'package:clothes_ecommerce/constants/global_variables.dart';
 import 'package:clothes_ecommerce/preferences/theme_manager.dart';
 import 'package:clothes_ecommerce/preferences/theme_notifier.dart';
-import 'package:clothes_ecommerce/providers/user_provider.dart';
 import 'package:clothes_ecommerce/widgets/brand_categories.dart';
 import 'package:clothes_ecommerce/widgets/custom_drawer.dart';
 import 'package:clothes_ecommerce/widgets/general_circular_button.dart';
@@ -26,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final isMobile = MediaQuery.of(context).size.width < 600;
     final theme = Provider.of<ThemeNotifier>(context);
     _darkTheme = (theme.getTheme() == darkTheme);
-    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
       key: _key,
       drawer: isMobile ? const CustomDrawer() : null,

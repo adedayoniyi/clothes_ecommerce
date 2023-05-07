@@ -15,13 +15,13 @@ class _BottomBarState extends State<BottomBar> {
   List<Widget> pages = [
     const HomeScreen(),
     const Center(
-      child: Text("Home page 1"),
+      child: Text("Wishhlist"),
     ),
     const Center(
-      child: Text("Home page 1"),
+      child: Text("Shopping bag"),
     ),
     const Center(
-      child: Text("Home page 1"),
+      child: Text("Wallet"),
     ),
   ];
   void updatePage(int page) {
@@ -70,7 +70,7 @@ class _BottomBarState extends State<BottomBar> {
                 ? const Padding(
                     padding: EdgeInsets.only(top: 17),
                     child: Text(
-                      "Home",
+                      "Bag",
                       style: TextStyle(
                         color: Color(0xFF9775FA),
                       ),
@@ -84,7 +84,7 @@ class _BottomBarState extends State<BottomBar> {
                 ? const Padding(
                     padding: EdgeInsets.only(top: 17),
                     child: Text(
-                      "Home",
+                      "Wallet",
                       style: TextStyle(
                         color: Color(0xFF9775FA),
                       ),

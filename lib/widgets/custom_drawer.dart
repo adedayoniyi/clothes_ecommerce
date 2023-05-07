@@ -27,36 +27,54 @@ class _CustomDrawerState extends State<CustomDrawer> {
     final theme = Provider.of<ThemeNotifier>(context);
     _darkTheme = (theme.getTheme() == darkTheme);
     return Drawer(
-      child: Column(
-        children: [
-          RotatedBox(
-            quarterTurns: 1,
-            child: GeneralCircularButton(
-              backgroundColor:
-                  _darkTheme ? Color(0xFF222E34) : Color(0xFFF5F6FA),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.menu),
+      child: SafeArea(
+        child: Column(
+          children: [
+            RotatedBox(
+              quarterTurns: 1,
+              child: GeneralCircularButton(
+                backgroundColor: _darkTheme
+                    ? const Color(0xFF222E34)
+                    : const Color(0xFFF5F6FA),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.menu),
+              ),
             ),
-          ),
-          ListTile(
-            //tileColor: Colors.green,
-            onTap: () {},
-            leading: Icon(Icons.person),
-            hoverColor: Colors.grey,
-            title: Text("My Account"),
-          ),
-          Switch(
-            value: _darkTheme,
-            onChanged: (val) {
-              setState(() {
-                _darkTheme = val;
-              });
-              onThemeChanged(val, theme);
-            },
-          ),
-        ],
+            ListTile(
+              //tileColor: Colors.green,
+              onTap: () {},
+              leading: const Icon(Icons.person),
+              hoverColor: Colors.grey,
+              title: const Text("My Account"),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Switch Mode",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Switch(
+                    value: _darkTheme,
+                    onChanged: (val) {
+                      setState(() {
+                        _darkTheme = val;
+                      });
+                      onThemeChanged(val, theme);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
